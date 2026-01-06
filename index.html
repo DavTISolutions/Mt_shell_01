@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mt_Sell_01 | Artesanías & Detalles</title>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@600;700&family=Nunito:wght@300;400;700&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <nav class="navbar">
+        <div class="logo">Mt_Sell_01 <i class="fa-solid fa-heart"></i></div>
+        <ul class="nav-links">
+            <li><a href="#inicio">Inicio</a></li>
+            <li><a href="#nosotros">Filosofía</a></li>
+            <li><a href="#galeria">Colección</a></li>
+            <li><a href="#contacto" class="btn-nav">Contacto</a></li>
+        </ul>
+        <div class="hamburger">
+            <i class="fa-solid fa-bars"></i>
+        </div>
+    </nav>
+
+    <header id="inicio" class="hero">
+        <div class="hero-content">
+            <span class="badge">Hecho con amor</span>
+            <h1 class="headline">Detalles que cuentan historias</h1>
+            <p>Manualidades, collares y regalos únicos para personas especiales. Donde la creatividad se encuentra con
+                la elegancia.</p>
+            <div class="hero-btns">
+                <a href="#galeria" class="btn btn-primary">Ver Creaciones</a>
+                <a href="#contacto" class="btn btn-secondary">Escribirnos</a>
+            </div>
+        </div>
+        <div class="shape shape-1"></div>
+        <div class="shape shape-2"></div>
+    </header>
+
+    <section id="nosotros" class="about">
+        <div class="container">
+            <div class="about-grid">
+                <div class="about-text">
+                    <h2 class="section-title">Nuestra Esencia</h2>
+                    <p>En <strong>Mt_Sell_01</strong>,ofrecemos productos de joyería y creaciones personalizadas
+                        preciosas (los cuales son elaborados con distintos materiales), provee de un amplio manejo de
+                        distintos accesorios, como marcos personalizados, llaveros, fundas pulseras y su
+                        principal joyería.</p>
+
+                    <div class="highlight-box">
+                        <i class="fa-solid fa-rocket"></i>
+                        <p>
+                            <strong>Brindar un servicio personalizado, nuestro fin es exponer un producto novedoso que
+                                satisfaga el gusto del cliente, con estándares altos en calidad, variedad de estilos e
+                                innovación.</strong>.
+                        </p>
+                    </div>
+                </div>
+                <div class="about-image">
+                    <img src="https://images.unsplash.com/photo-1515934751635-c81c6bc9a2d8?q=80&w=1000&auto=format&fit=crop"
+                        alt="Artesanías lindas">
+                    <div class="experience-badge">
+                        <span>100%</span> Ingenio
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="galeria" class="products">
+        <div class="container">
+            <h2 class="section-title center">Nuestra Colección</h2>
+            <p class="section-subtitle">Toca un producto para pedirlo directamente</p>
+
+            <div class="product-grid">
+
+                <div class="product-card" data-product="Collar Eterno Amor">
+                    <div class="card-image">
+                        <img src="Img/producto1.jpeg" alt="Collar">
+                        <div class="overlay">
+                            <i class="fa-brands fa-whatsapp"></i>
+                        </div>
+                    </div>
+                    <div class="card-info">
+                        <h3>Collar letra por letra</h3>
+                        <p>Acero inoxidable <b>$200</b></p>
+                        <button class="btn-shop" onclick="pedirProducto('Collar Letra por letra')">Lo quiero <i
+                                class="fa-solid fa-heart"></i></button>
+                    </div>
+                </div>
+
+                <div class="product-card" data-product="Caja Sorpresa Craft">
+                    <div class="card-image">
+                        <img src="Img/producto2.jpeg" alt="Regalo">
+                        <div class="overlay">
+                            <i class="fa-brands fa-whatsapp"></i>
+                        </div>
+                    </div>
+                    <div class="card-info">
+                        <h3>Collar Inicial</h3>
+                        <p>Acero inoxidable <b>$100</b></p>
+                        <button class="btn-shop" onclick="pedirProducto('Collar inicial')">Lo quiero <i
+                                class="fa-solid fa-heart"></i></button>
+                    </div>
+                </div>
+
+                <div class="product-card" data-product="Pulseras de Distancia">
+                    <div class="card-image">
+                        <img src="Img/producto3.jpeg" alt="Pulseras">
+                        <div class="overlay">
+                            <i class="fa-brands fa-whatsapp"></i>
+                        </div>
+                    </div>
+                    <div class="card-info">
+                        <h3>Collar Stranger things</h3>
+                        <p>Plata Con Acero inoxidable <b>$150</b></p>
+                        <button class="btn-shop" onclick="pedirProducto('Collar Stranger things')">Lo quiero <i
+                                class="fa-solid fa-heart"></i></button>
+                    </div>
+                </div>
+
+                <div class="product-card" data-product="Kit DIY Manualidades">
+                    <div class="card-image">
+                        <img src="Img/producto4.jpeg" alt="Kit DIY">
+                        <div class="overlay">
+                            <i class="fa-brands fa-whatsapp"></i>
+                        </div>
+                    </div>
+                    <div class="card-info">
+                        <h3>Marco personalizado</h3>
+                        <p>Carta <b>$220</b></p>
+                        <p>media carta<b>$180</b></p>
+                        <button class="btn-shop" onclick="pedirProducto('Marco personalizado')">Lo quiero <i
+                                class="fa-solid fa-heart"></i></button>
+                    </div>
+                </div>
+
+                <div class="product-card" data-product="Kit DIY Manualidades">
+                    <div class="card-image">
+                        <img src="Img/producto5.jpeg" alt="Kit DIY">
+                        <div class="overlay">
+                            <i class="fa-brands fa-whatsapp"></i>
+                        </div>
+                    </div>
+                    <div class="card-info">
+                        <h3>Fotos polaroid</h3>
+                        <p>20 por <b>$100</b></p>
+                        <button class="btn-shop" onclick="pedirProducto('Fotos polaroid')">Lo quiero <i
+                                class="fa-solid fa-heart"></i></button>
+                    </div>
+                </div>
+                <div class="product-card" data-product="Kit DIY Manualidades">
+                    <div class="card-image">
+                        <img src="Img/producto6.jpeg" alt="Kit DIY">
+                        <div class="overlay">
+                            <i class="fa-brands fa-whatsapp"></i>
+                        </div>
+                    </div>
+                    <div class="card-info">
+                        <h3>Llaberos con Foto</h3>
+                        <p>2 por<b> $100</b>.</p>
+                        <p>1 por<b> $70</b>.</p>
+                        <button class="btn-shop" onclick="pedirProducto('Llaberos con foto')">Lo quiero <i
+                                class="fa-solid fa-heart"></i></button>
+                    </div>
+                </div>
+
+
+            </div>
+        </div>
+    </section>
+
+    <section id="contacto" class="contact">
+        <div class="container">
+            <div class="contact-box">
+                <h2>¿Tienes una idea especial?</h2>
+                <p>Nos encanta personalizar pedidos. Escríbenos y hagamos realidad ese regalo perfecto.</p>
+                <a href="https://wa.me/5519119393" target="_blank" class="btn btn-whatsapp">
+                    <i class="fa-brands fa-whatsapp"></i> Chatear en WhatsApp
+                </a>
+                <div class="socials">
+                    <a href="https://www.instagram.com/mt_sell_01"><i class="fa-brands fa-instagram"></i></a>
+                    <a href="https://www.facebook.com/profile.php?id=100071073692481"><i
+                            class="fa-brands fa-facebook-f"></i></a>
+
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <p>&copy; 2024 Mt_Sell_01. Todos los derechos reservados.</p>
+        <p class="small">Impulsando el emprendimiento digital.</p>
+    </footer>
+
+    <script src="https://unpkg.com/scrollreveal"></script>
+    <script src="script.js"></script>
+</body>
+
+</html>
