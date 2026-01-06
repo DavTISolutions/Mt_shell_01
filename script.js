@@ -48,7 +48,7 @@ document.addEventListener('DOMContentLoaded', () => {
     // Esta función global será llamada por los botones HTML
     window.pedirProducto = function (nombreProducto) {
         // Tu número de WhatsApp (Reemplazar con el real)
-        const telefono = "525512345678";
+        const telefono = "5519119393";
 
         // Saludo personalizado con emojis y el producto específico
         const saludo = `Hola Mt_Sell 🎀! Quedé encantad@ con el producto "${nombreProducto}" que vi en su web. ¿Podrían darme más detalles?`;
