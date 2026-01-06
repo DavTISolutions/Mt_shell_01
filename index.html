@@ -16,13 +16,15 @@
 
     <nav class="navbar">
         <div class="logo">Mt_Sell_01 <i class="fa-solid fa-heart"></i></div>
+
         <ul class="nav-links">
-            <li><a href="#inicio">Inicio</a></li>
-            <li><a href="#nosotros">Filosofía</a></li>
-            <li><a href="#galeria">Colección</a></li>
-            <li><a href="#contacto" class="btn-nav">Contacto</a></li>
+            <li><a href="#inicio" onclick="closeMenu()">Inicio</a></li>
+            <li><a href="#nosotros" onclick="closeMenu()">Filosofía</a></li>
+            <li><a href="#galeria" onclick="closeMenu()">Colección</a></li>
+            <li><a href="#contacto" class="btn-nav" onclick="closeMenu()">Contacto</a></li>
         </ul>
-        <div class="hamburger">
+
+        <div class="hamburger" onclick="toggleMenu()">
             <i class="fa-solid fa-bars"></i>
         </div>
     </nav>
@@ -47,7 +49,7 @@
             <div class="about-grid">
                 <div class="about-text">
                     <h2 class="section-title">Nuestra Esencia</h2>
-                    <p>En <strong>Mt_Sell_01</strong>,ofrecemos productos de joyería y creaciones personalizadas
+                    <p>En <strong>Mt_Sell_01</strong>, ofrecemos productos de joyería y creaciones personalizadas
                         preciosas (los cuales son elaborados con distintos materiales), provee de un amplio manejo de
                         distintos accesorios, como marcos personalizados, llaveros, fundas pulseras y su
                         principal joyería.</p>
@@ -57,7 +59,7 @@
                         <p>
                             <strong>Brindar un servicio personalizado, nuestro fin es exponer un producto novedoso que
                                 satisfaga el gusto del cliente, con estándares altos en calidad, variedad de estilos e
-                                innovación.</strong>.
+                                innovación.</strong>
                         </p>
                     </div>
                 </div>
@@ -134,7 +136,7 @@
                     <div class="card-info">
                         <h3>Marco personalizado</h3>
                         <p>Carta <b>$220</b></p>
-                        <p>media carta<b>$180</b></p>
+                        <p>Media carta <b>$180</b></p>
                         <button class="btn-shop" onclick="pedirProducto('Marco personalizado')">Lo quiero <i
                                 class="fa-solid fa-heart"></i></button>
                     </div>
@@ -154,6 +156,7 @@
                                 class="fa-solid fa-heart"></i></button>
                     </div>
                 </div>
+
                 <div class="product-card" data-product="Kit DIY Manualidades">
                     <div class="card-image">
                         <img src="Img/producto6.jpeg" alt="Kit DIY">
@@ -162,15 +165,13 @@
                         </div>
                     </div>
                     <div class="card-info">
-                        <h3>Llaberos con Foto</h3>
+                        <h3>Llaveros con Foto</h3>
                         <p>2 por<b> $100</b>.</p>
                         <p>1 por<b> $70</b>.</p>
-                        <button class="btn-shop" onclick="pedirProducto('Llaberos con foto')">Lo quiero <i
+                        <button class="btn-shop" onclick="pedirProducto('Llaveros con foto')">Lo quiero <i
                                 class="fa-solid fa-heart"></i></button>
                     </div>
                 </div>
-
-
             </div>
         </div>
     </section>
@@ -187,7 +188,6 @@
                     <a href="https://www.instagram.com/mt_sell_01"><i class="fa-brands fa-instagram"></i></a>
                     <a href="https://www.facebook.com/profile.php?id=100071073692481"><i
                             class="fa-brands fa-facebook-f"></i></a>
-
                 </div>
             </div>
         </div>
@@ -199,7 +199,23 @@
     </footer>
 
     <script src="https://unpkg.com/scrollreveal"></script>
-    <script src="script.js"></script>
+
+    <script>
+        function toggleMenu() {
+            const navLinks = document.querySelector('.nav-links');
+            navLinks.classList.toggle('active');
+        }
+
+        function closeMenu() {
+            const navLinks = document.querySelector('.nav-links');
+            navLinks.classList.remove('active');
+        }
+
+        function pedirProducto(nombre) {
+            const mensaje = `Hola, me interesa el producto: ${nombre}`;
+            window.open(`https://wa.me/5519119393?text=${encodeURIComponent(mensaje)}`, '_blank');
+        }
+    </script>
 </body>
 
 </html>
