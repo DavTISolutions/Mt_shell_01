@@ -18,13 +18,13 @@
         <div class="logo">Mt_Sell_01 <i class="fa-solid fa-heart"></i></div>
 
         <ul class="nav-links">
-            <li><a href="#inicio" onclick="closeMenu()">Inicio</a></li>
-            <li><a href="#nosotros" onclick="closeMenu()">Filosofía</a></li>
-            <li><a href="#galeria" onclick="closeMenu()">Colección</a></li>
-            <li><a href="#contacto" class="btn-nav" onclick="closeMenu()">Contacto</a></li>
+            <li><a href="#inicio">Inicio</a></li>
+            <li><a href="#nosotros">Filosofía</a></li>
+            <li><a href="#galeria">Colección</a></li>
+            <li><a href="#contacto" class="btn-nav">Contacto</a></li>
         </ul>
 
-        <div class="hamburger" onclick="toggleMenu()">
+        <div class="hamburger">
             <i class="fa-solid fa-bars"></i>
         </div>
     </nav>
@@ -198,23 +198,7 @@
     </footer>
 
     <script src="https://unpkg.com/scrollreveal"></script>
-
-    <script>
-        function toggleMenu() {
-            const navLinks = document.querySelector('.nav-links');
-            navLinks.classList.toggle('active');
-        }
-
-        function closeMenu() {
-            const navLinks = document.querySelector('.nav-links');
-            navLinks.classList.remove('active');
-        }
-
-        function pedirProducto(nombre) {
-            const mensaje = `Hola, me interesa el producto: ${nombre}`;
-            window.open(`https://wa.me/5519119393?text=${encodeURIComponent(mensaje)}`, '_blank');
-        }
-    </script>
+    <script src="script.js"></script>
 </body>
 
 </html>

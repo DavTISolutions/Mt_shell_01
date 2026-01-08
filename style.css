@@ -13,11 +13,11 @@
     --font-body: 'Nunito', sans-serif;
 }
 
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    scroll-behavior: smooth;
+html {
+    scroll-padding-top: 100px;
+    /* CORRECCIÓN: Asegura que nada se salga del ancho de la pantalla */
+    width: 100%;
+    overflow-x: hidden;
 }
 
 body {
@@ -25,8 +25,17 @@ body {
     background-color: var(--bg-light);
     color: var(--text-dark);
     line-height: 1.6;
+    /* CORRECCIÓN: Refuerzo para evitar scroll horizontal */
+    width: 100%;
     overflow-x: hidden;
-    /* Evita scroll horizontal por decoraciones */
+    position: relative;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    scroll-behavior: smooth;
 }
 
 /* Regla global para imágenes responsive */
@@ -58,26 +67,21 @@ ul {
     justify-content: space-between;
     align-items: center;
     padding: 1rem 5%;
-    /* Reducido un poco para móviles */
     background: rgba(255, 255, 255, 0.95);
     position: fixed;
+    /* Ancho controlado */
     width: 90%;
-    /* Centrado perfecto para fixed elements */
     left: 50%;
     transform: translateX(-50%);
     top: 10px;
-    /* Un poco de margen arriba */
     z-index: 1000;
     box-shadow: 0 2px 15px rgba(0, 0, 0, 0.05);
     border-radius: 50px;
-    /* Opcional: para que combine con los botones */
     backdrop-filter: blur(10px);
-    /* Efecto vidrio moderno */
 }
 
 .logo {
     font-size: 1.5rem;
-    /* Ajustado ligeramente */
     font-family: var(--font-heading);
     color: var(--accent-color);
     white-space: nowrap;
@@ -120,19 +124,18 @@ ul {
 
 /* --- Hero Section --- */
 .hero {
-    /* Usar min-height para evitar cortes en móviles pequeños */
     min-height: 100vh;
-    /* dvh funciona mejor en móviles modernos */
     min-height: 100dvh;
     display: flex;
     align-items: center;
     justify-content: center;
     text-align: center;
     position: relative;
-    padding: 80px 20px 20px;
-    /* Top padding extra por el navbar fixed */
+    padding: 120px 20px 40px;
     background: linear-gradient(135deg, #fff0f5 0%, #fff 100%);
+    /* CORRECCIÓN: Cortar cualquier forma que se salga */
     overflow: hidden;
+    width: 100%;
 }
 
 .hero-content {
@@ -174,7 +177,6 @@ ul {
     justify-content: center;
     gap: 15px;
     flex-wrap: wrap;
-    /* Para que los botones bajen si no caben */
 }
 
 .btn {
@@ -231,6 +233,8 @@ ul {
 .about {
     padding: 100px 5%;
     background: white;
+    /* Importante para evitar overflow */
+    overflow: hidden;
 }
 
 .container {
@@ -279,7 +283,6 @@ ul {
     font-size: 1.5rem;
     margin-top: 5px;
     flex-shrink: 0;
-    /* Evita que el icono se aplaste */
 }
 
 .about-image {
@@ -319,7 +322,6 @@ ul {
 
 .product-grid {
     display: grid;
-    /* Ajuste responsivo: minmax reducido a 250px para caber bien en tablets pequeñas */
     grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
     gap: 2rem;
 }
@@ -334,7 +336,6 @@ ul {
     position: relative;
     border: 1px solid #eee;
     height: 100%;
-    /* Igualar alturas */
     display: flex;
     flex-direction: column;
 }
@@ -394,7 +395,6 @@ ul {
 .card-info {
     text-align: center;
     flex-grow: 1;
-    /* Empuja el contenido para llenar la tarjeta */
     display: flex;
     flex-direction: column;
     justify-content: space-between;
@@ -513,10 +513,9 @@ footer .small {
 }
 
 /* =========================================
-   RESPONSIVE MEDIA QUERIES (100% Responsive)
+   RESPONSIVE (Ajustes finos para que no rompa)
    ========================================= */
 
-/* Tablets y Laptops Pequeñas (max 1024px) */
 @media (max-width: 1024px) {
     .headline {
         font-size: 3.5rem;
@@ -527,10 +526,7 @@ footer .small {
     }
 }
 
-/* Tablets y Móviles Grandes (max 768px) */
 @media (max-width: 768px) {
-
-    /* Navbar Móvil */
     .navbar {
         width: 90%;
         top: 15px;
@@ -544,7 +540,6 @@ footer .small {
     .nav-links {
         position: absolute;
         top: 100%;
-        /* Justo debajo del navbar */
         left: 0;
         width: 100%;
         background: white;
@@ -554,25 +549,24 @@ footer .small {
         box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
         text-align: center;
         gap: 1.5rem;
-
-        /* Ocultar menú por defecto */
         opacity: 0;
         visibility: hidden;
         transform: translateY(-20px);
         transition: all 0.3s ease;
     }
 
-    /* Clase para mostrar menú con JS */
     .nav-links.active {
         opacity: 1;
         visibility: visible;
         transform: translateY(10px);
-        /* Pequeño margen */
     }
 
-    /* Hero */
+    .hero {
+        padding-top: 140px;
+    }
+
     .hero-content {
-        padding-top: 50px;
+        padding-top: 0;
     }
 
     .headline {
@@ -593,7 +587,6 @@ footer .small {
         right: -20px;
     }
 
-    /* About: Colapsar a una columna */
     .about-grid {
         grid-template-columns: 1fr;
         text-align: center;
@@ -601,7 +594,6 @@ footer .small {
 
     .highlight-box {
         justify-content: center;
-        /* Centrar icono y texto */
         text-align: left;
     }
 
@@ -612,7 +604,6 @@ footer .small {
         margin-right: auto;
     }
 
-    /* Ajuste de padding en secciones */
     .about,
     .products,
     .contact {
@@ -620,13 +611,9 @@ footer .small {
     }
 }
 
-/* Móviles Pequeños (max 480px) */
 @media (max-width: 480px) {
-
-    /* Navbar */
     .navbar {
         width: 95%;
-        /* Más ancho en móviles pequeños */
         padding: 0.8rem 1rem;
     }
 
@@ -634,10 +621,8 @@ footer .small {
         font-size: 1.3rem;
     }
 
-    /* Hero */
     .headline {
         font-size: 2.5rem;
-        /* Texto más pequeño para no romper */
     }
 
     .hero p {
@@ -646,9 +631,7 @@ footer .small {
 
     .btn {
         width: 100%;
-        /* Botones full width */
         margin-left: 0;
-        /* Quitar margen del secundario */
         margin-bottom: 10px;
     }
 
@@ -661,10 +644,8 @@ footer .small {
         margin-left: 0;
     }
 
-    /* Products */
     .product-grid {
         grid-template-columns: 1fr;
-        /* Una sola columna */
         gap: 2rem;
     }
 
@@ -672,7 +653,6 @@ footer .small {
         font-size: 2.2rem;
     }
 
-    /* Contact */
     .contact-box {
         padding: 2rem 1rem;
     }
@@ -688,12 +668,13 @@ footer .small {
         justify-content: center;
     }
 
-    /* Experience Badge */
+    /* CORRECCIÓN: Evitar que el badge empuje el ancho */
     .experience-badge {
         width: 90px;
         height: 90px;
-        right: -10px;
-        bottom: -10px;
+        right: 0;
+        /* Antes estaba en -10px, eso causaba el espacio blanco */
+        bottom: -20px;
         padding: 10px;
         font-size: 0.8rem;
     }

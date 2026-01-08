@@ -1,12 +1,12 @@
 document.addEventListener('DOMContentLoaded', () => {
 
-    // 1. Menú Responsivo
     const hamburger = document.querySelector('.hamburger');
     const navLinks = document.querySelector('.nav-links');
+    const navLinksItems = document.querySelectorAll('.nav-links a');
 
     hamburger.addEventListener('click', () => {
         navLinks.classList.toggle('active');
-        // Cambiar ícono de hamburguesa a X
+
         const icon = hamburger.querySelector('i');
         if (navLinks.classList.contains('active')) {
             icon.classList.remove('fa-bars');
@@ -17,46 +17,50 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     });
 
-    // Cerrar menú al hacer click en un enlace
-    document.querySelectorAll('.nav-links a').forEach(link => {
+    navLinksItems.forEach(link => {
         link.addEventListener('click', () => {
             navLinks.classList.remove('active');
-            hamburger.querySelector('i').classList.remove('fa-times');
-            hamburger.querySelector('i').classList.add('fa-bars');
+            const icon = hamburger.querySelector('i');
+            icon.classList.remove('fa-times');
+            icon.classList.add('fa-bars');
         });
     });
 
-    // 2. Configuración de ScrollReveal (Animaciones al hacer scroll)
     const sr = ScrollReveal({
-        origin: 'top',
         distance: '60px',
         duration: 2000,
         delay: 200,
-        reset: true // Las animaciones se repiten al subir y bajar
+        reset: true,
+        mobile: true
     });
 
-    sr.reveal('.hero-content', {});
+    sr.reveal('.navbar', { origin: 'top', delay: 100 });
+    sr.reveal('.hero .badge', { origin: 'top', distance: '20px' });
+    sr.reveal('.hero .headline', { origin: 'left', delay: 300 });
+    sr.reveal('.hero p', { origin: 'right', delay: 400 });
+    sr.reveal('.hero-btns', { origin: 'bottom', delay: 500 });
+
+    sr.reveal('.about-text', { origin: 'left', delay: 300 });
     sr.reveal('.about-image', { origin: 'right', delay: 400 });
-    sr.reveal('.about-text', { origin: 'left', delay: 400 });
 
-    // Animación en cascada para las tarjetas de producto
-    sr.reveal('.product-card', { interval: 200 });
+    sr.reveal('.section-title.center', { origin: 'top' });
+    sr.reveal('.section-subtitle', { origin: 'bottom', delay: 200 });
 
-    sr.reveal('.contact-box', { scale: 0.9 });
+    sr.reveal('.product-card', {
+        origin: 'bottom',
+        interval: 200
+    });
 
-    // 3. Funcionalidad Ingeniosa: WhatsApp Dinámico
-    // Esta función global será llamada por los botones HTML
+    sr.reveal('.contact-box', {
+        origin: 'bottom',
+        scale: 0.9,
+        duration: 1500
+    });
+
     window.pedirProducto = function (nombreProducto) {
-        // Tu número de WhatsApp (Reemplazar con el real)
         const telefono = "5519119393";
-
-        // Saludo personalizado con emojis y el producto específico
         const saludo = `Hola Mt_Sell 🎀! Quedé encantad@ con el producto "${nombreProducto}" que vi en su web. ¿Podrían darme más detalles?`;
-
-        // Codificar el texto para URL
         const url = `https://wa.me/${telefono}?text=${encodeURIComponent(saludo)}`;
-
-        // Abrir en nueva pestaña
         window.open(url, '_blank');
     };
 });
